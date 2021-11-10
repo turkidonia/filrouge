@@ -21,8 +21,14 @@ Start the application dev with :
 npm run start
 ```
 
-Analyse the coding rules with :
+Created the dist with :
 
 ```bash
 npm run dist
+```
+
+Analyse the coding rules with :
+
+```bash
+npm run lint
 ```
