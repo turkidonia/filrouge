@@ -1,5 +1,13 @@
+import React from 'react';
+import { render } from 'react-dom';
+
 import './index.scss';
 
-const hello = 'hello';
+// Routes
+import RoutesConfig from './routes-config';
 
-console.log(hello);
+const App = () => (
+  <RoutesConfig />
+);
+
+render(<App />, document.getElementById('app'));
