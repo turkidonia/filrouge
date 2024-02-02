@@ -5,12 +5,14 @@ import {
   Route
 } from 'react-router-dom';
 
-import Home from './components/home';
+import Home from './components/Home';
+import Error404 from './components/Error404';
 
 const RoutesConfig = () => (
   <Router>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route index element={<Home />} />
+      <Route path="*" element={<Error404 />} />
     </Routes>
   </Router>
 );
