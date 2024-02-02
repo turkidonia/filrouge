@@ -1,13 +1,13 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import './index.scss';
 
 // Routes
-import RoutesConfig from './routes-config';
+import RoutesConfig from './routes';
 
-const App = () => (
+const App = createRoot(document.getElementById('app'));
+
+App.render(
   <RoutesConfig />
 );
-
-render(<App />, document.getElementById('app'));

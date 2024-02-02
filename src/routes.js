@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Routes,
   Route
 } from 'react-router-dom';
@@ -8,11 +8,11 @@ import {
 import Home from './components/home';
 
 const RoutesConfig = () => (
-  <BrowserRouter>
+  <Router>
     <Routes>
       <Route path="/" element={<Home />} />
     </Routes>
-  </BrowserRouter>
+  </Router>
 );
 
 export default RoutesConfig;
