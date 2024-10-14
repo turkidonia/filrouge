@@ -30,6 +30,7 @@ module.exports = {
     'eslint linebreak-style': [0, 'error', 'windows'],
     'react/prop-types': 0,
     'no-shadow': 0,
-    'default-param-last': 0
+    'default-param-last': 0,
+    'max-len': ['error', { 'code': 130 }]
   }
 };
