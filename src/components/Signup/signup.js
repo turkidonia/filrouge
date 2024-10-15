@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import './signup.css';
 
-const Login = () => {
+const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+  const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleLogin = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
-    // Logique d'authentification (API, validation, etc.)console.log('Utilisateur connecté avec :', { email, password });
-  };
-
-  const handleSignUpRedirect = () => {
-    navigate('/login'); // Redirection vers la page d'inscription
   };
 
   return (
-    <div className="login-container">
-      <h2>Connexion</h2>
-      <form onSubmit={handleLogin}>
+    <div className="signup-container">
+      <h2>Inscription</h2>
+      <form onSubmit={handleSignup}>
         <div className="form-group">
           <label htmlFor="email">Email :</label>
           <input
@@ -39,14 +34,19 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit">Se connecter</button>
+        <div className="form-group">
+          <label htmlFor="confirmPassword">Confirmer mot de passe :</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">S&apos;inscrire</button>
       </form>
-
-      <div className="signup-section">
-        <p>Pas encore de compte ?</p>
-        <button onClick={handleSignUpRedirect}>S&apos;inscrire</button>
-      </div>
     </div>
   );
 };
-export default Login;
+export default Signup;

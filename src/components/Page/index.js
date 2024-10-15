@@ -1,18 +1,28 @@
 import React from 'react';
 
-import Navigation from '../Navigation';
-import Footer from '../Footer';
+import Navbar from '../Header/NavDisconnected';
+import Home from '../Home';
 import Apropos from '../Apropos';
-import './style.scss';
+import Mentorat from '../Mentorat';
+import Testimonials from '../Testimonials';
+import Signup from '../Signup/signup';
+import Login from '../Login';
 import Contact from '../Contact';
+import Footer from '../Footer';
+
+import './style.scss';
 
 const Page = ({ children }) => (
   <>
    <header>
-    <Navigation />
+    <Navbar/>
    </header>
    <Home />
    <Apropos />
+   <Mentorat />
+   <Testimonials />
+   <Signup />
+   <Login />
    <Contact />
 
    <Footer />

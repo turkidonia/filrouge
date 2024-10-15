@@ -17,19 +17,23 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread']
-          }
-        }
+            plugins: ['@babel/plugin-proposal-object-rest-spread'],
+          },
+        },
       },
       {
         test: /\.(c|sa|sc)ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      { test: /\.ts$/, use: 'ts-loader' },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
         use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader",
+          {
+            loader: 'file-loader',
+          },
         ],
       },
-      { test: /\.ts$/, use: 'ts-loader' }
     ],
   },
   devServer: {
