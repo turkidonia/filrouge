@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './index.scss';
 
@@ -12,9 +8,9 @@ import Header from './components/Header/NavDisconnected';
 import Home from './components/Home';
 import Apropos from './components/Apropos';
 import Mentorat from './components/Mentorat';
-import Testimonials from './components/Testimonials';
+import Temoignages from './components/Temoignages';
 import Login from './components/Login';
-import Signup from './components/Signup/signup';
+import Categories from './components/Categories';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -25,9 +21,9 @@ const RoutesConfig = () => (
       <Route path="/" element={<Home />} />
       <Route path="/apropos" element={<Apropos />} />
       <Route path="/mentorat" element={<Mentorat />} />
-      <Route path="/testimonials" element={<Testimonials />} />
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
+      <Route path="/temoignages" element={<Temoignages />} />
+      <Route path="/categories" element={<Categories />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<Error404 />} />
     </Routes>

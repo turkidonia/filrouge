@@ -34,6 +34,18 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/,  // Type de fichiers à gérer
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',  // Option de nommage du fichier en sortie
+              outputPath: 'videos/',        // Où les fichiers seront placés après compilation
+            },
+          },
+        ],
+      }
     ],
   },
   devServer: {

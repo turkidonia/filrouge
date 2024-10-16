@@ -1,29 +1,20 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import './login.css';
 
-const Login = () => {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Logique d'authentification (API, validation, etc.)console.log('Utilisateur connecté avec :', { email, password });
-  };
-
-  const handleSignUpRedirect = () => {
-    navigate('/login'); // Redirection vers la page d'inscription
-  };
-
+  const handleLogin = (e) => e.preventDefault();
   return (
     <div className="login-container">
-      <h2>Connexion</h2>
+      <h2>Se connecter</h2>
       <form onSubmit={handleLogin}>
         <div className="form-group">
           <label htmlFor="email">Email :</label>
           <input
-            type="email"
             id="email"
+            type="email"
+            placeholder="Entrez votre email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -32,21 +23,19 @@ const Login = () => {
         <div className="form-group">
           <label htmlFor="password">Mot de passe :</label>
           <input
-            type="password"
             id="password"
+            type="password"
+            placeholder="Entrez votre mot de passe"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
-        <button type="submit">Se connecter</button>
+        <button type="submit" className="btn-login">
+          Connexion
+        </button>
       </form>
-
-      <div className="signup-section">
-        <p>Pas encore de compte ?</p>
-        <button onClick={handleSignUpRedirect}>S&apos;inscrire</button>
-      </div>
     </div>
   );
-};
+}
 export default Login;
