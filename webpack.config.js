@@ -17,40 +17,40 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread'],
-          },
-        },
+            plugins: ['@babel/plugin-proposal-object-rest-spread']
+          }
+        }
       },
       {
         test: /\.(c|sa|sc)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       { test: /\.ts$/, use: 'ts-loader' },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
         use: [
           {
-            loader: 'file-loader',
-          },
-        ],
+            loader: 'file-loader'
+          }
+        ]
       },
       {
-        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/,  // Type de fichiers à gérer
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/, // Type de fichiers à gérer
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[hash].[ext]',  // Option de nommage du fichier en sortie
-              outputPath: 'videos/',        // Où les fichiers seront placés après compilation
-            },
-          },
-        ],
+              name: '[name].[hash].[ext]', // Option de nommage du fichier en sortie
+              outputPath: 'videos/' // Où les fichiers seront placés après compilation
+            }
+          }
+        ]
       }
-    ],
+    ]
   },
   devServer: {
     historyApiFallback: true,
-    host: '127.0.0.1',
+    host: 'localhost',
     port: 9090,
     open: true,
     hot: true,

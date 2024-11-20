@@ -1,10 +1,28 @@
 import React, { useState } from 'react';
 import './login.css';
+import axios from 'axios';
+
+const loginURL = 'http://localhost:8081/public/v1/auth/login';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const handleLogin = (e) => e.preventDefault();
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const loginForm = {
+      username: email,
+      password
+    };
+    try {
+      const response = await axios.post(loginURL, loginForm);
+      localStorage.setItem('user', response.data.token);
+      setEmail('');
+      setPassword('');
+    } catch (error) {
+      setEmail('');
+    }
+  };
   return (
     <div className="login-container">
       <h2>Se connecter</h2>

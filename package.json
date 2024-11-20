@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Chat Bot IO v2",
   "main": "index.js",
+  "prettier": {
+    "trailingComma": "none",
+    "singleQuote": true
+  },
   "scripts": {
     "start": "npx webpack-dev-server --mode development",
     "dist": "npx webpack --mode production --progress=profile",
@@ -47,6 +51,7 @@
     "webpack-dev-server": "^4.4.0"
   },
   "dependencies": {
+    "axios": "^1.7.7",
     "bootswatch": "^5.3.3",
     "react": "^18.0.0",
     "react-bootstrap": "^2.10.4",
