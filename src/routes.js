@@ -20,7 +20,7 @@ const RoutesConfig = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/apropos" element={<Apropos />} />
-      <Route path="/mentorat" element={<Mentorat />} />
+      <Route path="/mentorat" component={Mentorat} />
       <Route path="/temoignages" element={<Temoignages />} />
       <Route path="/categories" element={<Categories />} />
       <Route path="/login" element={<Login />} />

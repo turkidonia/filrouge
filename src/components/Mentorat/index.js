@@ -1,10 +1,12 @@
 import React from 'react';
 import vod1 from '../../assets/videos/vod1.mp4';
-import vod3 from '../../assets/videos/vod3.mp4';
+//import vod3 from '../../assets/videos/vod3.mp4';
 import vod4 from '../../assets/videos/vod4.mp4';
 import './mentorat.css';
 
-const Mentorat = () => (
+const Mentorat = () => {
+  const vod3Url = 'http://localhost:8081/vod3';
+  return (
     <div className="mentorship-container">
       <section className="mentorship-content">
         <h1>Découvrez notre programme de mentorat</h1>
@@ -52,7 +54,7 @@ const Mentorat = () => (
           <h2>Rencontre avec nos mentors</h2>
           <div className="video-wrapper">
             <video width="100%" height="auto" controls>
-              <source src={vod3} type="video/mp4" />
+              <source src={vod3Url} type="video/mp4" />
               <track kind="captions" src="captions_en.vtt" srcLang="en" label="English" />
             </video>
           </div>
@@ -60,4 +62,5 @@ const Mentorat = () => (
         </div>
       </section>
     </div>);
-export default Mentorat;
+};
+export default Mentorat();

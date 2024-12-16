@@ -20,7 +20,7 @@ module.exports = {
   },
   rules: {
     "no-console": "off",
-
+    "spaced-comment": "off",
     'class-methods-use-this': 0,
     'comma-dangle': ['error', 'never'],
     'linebreak-style': 0,
