@@ -1,8 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
+  performance: {
+    maxAssetSize: 100000000, // Set a higher limit for assets (in bytes)
+    maxEntrypointSize: 100000000, // Set a higher limit for entry points (in bytes)
+    hints: false // Disable warnings completely
+  },
+  mode: 'production',
   entry: './src/index.js',
   output: {
     filename: 'src/[name].[fullhash].js',
@@ -45,13 +52,20 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.mp4$/,
+        type: 'asset/resource', // Ensures the file is treated as a separate asset
+        generator: {
+          filename: 'assets/videos/[name][ext]' // Specify output directory for videos
+        }
       }
     ]
   },
   devServer: {
     historyApiFallback: true,
     host: 'localhost',
-    port: 9090,
+    port: 9091,
     open: true,
     hot: true,
     client: {
@@ -72,6 +86,7 @@ module.exports = {
       extensions: 'js',
       exclude: 'node_modules',
       files: './src/'
-    })
+    }),
+    new Dotenv()
   ]
 };

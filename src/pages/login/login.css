@@ -1,0 +1,245 @@
+/* login.css */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Raleway:wght@400;500;600&display=swap');
+
+/* Container principal */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #FFD8C2; /* beige clair */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+/* Titre */
+.login-container h2 {
+  font-family: 'Old Standard TT', serif;
+  color: #FF7E33; /* orange vif */
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Labels */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #000000;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Inputs texte et mot de passe */
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #FF7E33; /* orange */
+  outline: none;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #FF7E33;
+  box-shadow: 0 0 5px rgba(255, 126, 51, 0.3);
+}
+
+/* Inputs radio Mentor / Mentorée */
+/* Radio buttons stylisés */
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.radio-group input[type="radio"] {
+  display: none; /* cache le bouton radio classique */
+}
+
+.radio-group label {
+  flex: 1;
+  padding: 12px 0;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid #FF7E33;
+  background-color: #FFD8C2;
+  color: #000000;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-group input[type="radio"]:checked + label {
+  background-color: #FF7E33;
+  color: #F4F4F4;
+  box-shadow: 0 4px 10px rgba(255, 126, 51, 0.3);
+}
+
+.radio-group label:hover {
+  background-color: #FF9C59;
+  color: #F4F4F4;
+}
+/* Bouton inscription */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background-color: #FF7E33; /* orange vif */
+  color: #F4F4F4; /* texte clair */
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Message d'erreur */
+.error-msg {
+  color: #FF7E33;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Message succès */
+.success-msg {
+  color: #28a745;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Lien vers connexion */
+.register-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #000000;
+  font-family: 'Raleway', sans-serif;
+}
+
+.register-link a {
+  color: #FF7E33;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 20px;
+    margin: 30px 10px;
+  }
+  
+  .radio-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 20px;
+  background-color: #F4F4F4;
+  flex-wrap: wrap;
+}
+
+.contact-image img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.stats {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-icon {
+  font-size: 40px;
+  color: #FF7E33;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-family: 'Old Standard TT', serif;
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.stat-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+
+.btn-contact {
+  padding: 14px 28px;
+  background-color: #FF7E33;
+  color: #F4F4F4;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .stats {
+    justify-content: center;
+    gap: 20px;
+  }
+}

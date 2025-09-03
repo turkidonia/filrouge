@@ -1,0 +1,145 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: #000000;
+  height: 100px;
+  position: relative;
+}
+
+.navbar-left .logo {
+  width: 100px;
+  height: auto;
+}
+
+.navbar-center {
+  list-style: none;
+  display: flex;
+  gap: 200px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-center li a {
+  text-decoration: none;
+  color: #F4F4F4;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navbar-center li a:hover {
+  color: #FF7E33;
+}
+
+.navbar-separator {
+  width: 1px;
+  height: 40px;
+  background-color: #F4F4F4;
+  margin: 0 20px;
+}
+
+.navbar-right {
+  position: relative;
+}
+
+.btn-user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #FF7E33;
+  color: #F4F4F4;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-user:hover {
+  background-color: #FFD8C2;
+}
+
+/* Conteneur dropdown utilisateur */
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+}
+
+.dropdown-item:hover {
+  background-color: #FFD8C2;
+  color: #000;
+}
+
+
+.icon-user, .icon-chevron {
+  font-size: 18px;
+}
+/* Dropdown Nos services */
+.dropdown-services {
+  position: relative;
+  cursor: pointer;
+}
+
+.services-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  color: #F4F4F4;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.services-title:hover {
+  color: #FF7E33;
+}
+
+/* Menu déroulant */
+.dropdown-services-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 180px;
+  z-index: 100;
+}
+
+/* Items du dropdown */
+.dropdown-services-menu li a {
+  display: block;
+  padding: 12px 20px;
+  color: #F4F4F4;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-services-menu li a:hover {
+  background-color: #FF7E33;
+  color: #FFFFFF;
+}

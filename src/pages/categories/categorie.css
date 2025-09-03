@@ -1,0 +1,87 @@
+.page-container {
+  background-color: #F4F4F4;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  font-family: 'Old Standard TT', serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.page-description {
+  font-size: 1.3rem;
+  color: #000000;
+  margin-bottom: 30px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 100px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 350px;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: all; /* bloque le clic sur l’iframe */
+  cursor: not-allowed;
+  font-size: 1.1rem;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.login-button-container {
+  text-align: center;
+  margin-top: auto; /* pousse le bouton en bas */
+  margin-bottom: 100px;
+}
+
+.login-button {
+  background-color: #FF7E33;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #FFD8C2;
+  color: #000;
+}
