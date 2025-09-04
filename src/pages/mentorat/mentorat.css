@@ -77,3 +77,28 @@
   font-weight: bold;
   color: #000;
 }
+.contact-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contact-button {
+  background-color: #FF7E33;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #FFD8C2;
+  color: #000;
+  font-size: 1.2em;
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+

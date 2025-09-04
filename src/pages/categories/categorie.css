@@ -71,17 +71,22 @@
 
 .login-button {
   background-color: #FF7E33;
-  color: #fff;
-  border: none;
-  padding: 14px 28px;
+  color: #FFFFFF;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.1rem;
-  border-radius: 8px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  margin-top: 1.5rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  border: none;
 }
 
 .login-button:hover {
   background-color: #FFD8C2;
   color: #000;
+   font-size: 1.2em;
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }

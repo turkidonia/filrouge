@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './mentorat.css';
 import { FaStar } from 'react-icons/fa';
 
@@ -61,6 +62,11 @@ const Mentorat = () => (
           </div>
         ))}
       </div>
+       <div className="contact-button-container">
+        <Link to="/contact">
+          <button className="contact-button">Contactez-nous</button>
+        </Link>
+    </div>
     </section>
 );
 

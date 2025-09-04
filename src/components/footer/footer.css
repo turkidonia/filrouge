@@ -78,4 +78,16 @@
       }
     }
   }
-  
+  .partners-logos img {
+  width: 100px;
+  height: auto;
+  margin: 0 10px;
+  opacity: 0;                    /* invisible au départ */
+  transform: translateY(30px) scale(0.8); /* décalé et plus petit */
+  transition: all 0.6s ease-out; /* animation fluide */
+}
+
+.partners-logos img.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1); /* remonte et reprend sa taille normale */
+}
