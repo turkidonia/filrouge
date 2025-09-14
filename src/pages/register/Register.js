@@ -39,10 +39,7 @@ function Register() {
     };
 
     try {
-      const response = await axios.post(
-        `${apiUrl}/public/v1/auth/register`,
-        registerForm
-      );
+      const response = await axios.post(`${apiUrl}/public/v1/auth/register`, registerForm);
 
       setSuccess(
         response.data.message || 'Inscription réussie 🎉 Vous pouvez maintenant vous connecter.'
@@ -64,7 +61,6 @@ function Register() {
     <div className="login-container">
       <h2>Créer un compte</h2>
       <form onSubmit={handleRegister}>
-
         <div className="form-group">
           <label htmlFor="email">Email :</label>
           <input
@@ -104,31 +100,33 @@ function Register() {
         <div className="form-group">
           <p>Je suis :</p>
           <div className="radio-group">
-          <input
-            type="radio"
-            id="mentor"
-            name="isMentored"
-            value="false"
-            checked={isMentored === false}
-            onChange={() => setIsMentored(false)}
-          />
-          <label htmlFor="mentor">Mentor</label>
+            <input
+              type="radio"
+              id="mentor"
+              name="isMentored"
+              value="false"
+              checked={isMentored === false}
+              onChange={() => setIsMentored(false)}
+            />
+            <label htmlFor="mentor">Mentor</label>
 
-          <input
-            type="radio"
-            id="mentoree"
-            name="isMentored"
-            value="true"
-            checked={isMentored === true}
-            onChange={() => setIsMentored(true)}
-          />
-          <label htmlFor="mentoree">Mentorée</label>
+            <input
+              type="radio"
+              id="mentoree"
+              name="isMentored"
+              value="true"
+              checked={isMentored === true}
+              onChange={() => setIsMentored(true)}
+            />
+            <label htmlFor="mentoree">Mentorée</label>
           </div>
         </div>
         {error && <p className="error-msg">{error}</p>}
         {success && <p className="success-msg">{success}</p>}
 
-        <button type="submit" className="btn-login">S&apos;inscrire</button>
+        <button type="submit" className="btn-login">
+          S&apos;inscrire
+        </button>
       </form>
     </div>
   );

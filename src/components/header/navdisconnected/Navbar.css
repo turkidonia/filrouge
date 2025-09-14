@@ -1,145 +1,120 @@
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 30px;
   background-color: #000000;
-  height: 100px;
-  position: relative;
-}
-
-.navbar-left .logo {
-  width: 100px;
-  height: auto;
-}
-
-.navbar-center {
-  list-style: none;
+  padding: 0.8rem 2rem;
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   display: flex;
-  gap: 200px;
+  justify-content: space-around;
   align-items: center;
-  margin: 0;
-  padding: 0;
 }
 
-.navbar-center li a {
-  text-decoration: none;
-  color: #F4F4F4;
-  font-weight: bold;
-  font-size: 16px;
+.navbar-nav {
+  display: flex;
+  gap: 5rem
+}
+
+.nav-link {
+  color: #F4F4F4 !important;
+  font-weight: 600;
+  font-size: 1.2rem;
   transition: color 0.3s;
 }
 
-.navbar-center li a:hover {
-  color: #FF7E33;
+.nav-link:hover {
+  color: #FF7E33 !important;
+}
+
+.dropdown-menu {
+  background-color: #000000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  display: block;
+  pointer-events: none;
+  border-radius: 0.5rem;
+  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-item {
+  color: #F4F4F4 !important;
+  padding: 0.6rem 1rem;
+  transition: all 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #FF7E33 !important;
+  color: #FFFFFF !important;
+  transform: translateX(5px);
 }
 
 .navbar-separator {
-  width: 1px;
-  height: 40px;
-  background-color: #F4F4F4;
-  margin: 0 20px;
-}
-
-.navbar-right {
-  position: relative;
+  width: 2px;
+  background-color: #FF7E33;
+  margin: 0 2rem;
+  align-self: stretch;
 }
 
 .btn-user {
-  display: flex;
-  align-items: center;
-  gap: 20px;
   background-color: #FF7E33;
   color: #F4F4F4;
+  border-radius: 25px;
   padding: 12px 20px;
+  display: flex;
+  align-items: center;
   border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s;
 }
 
 .btn-user:hover {
   background-color: #FFD8C2;
+  color: #000000;
 }
 
-/* Conteneur dropdown utilisateur */
-.dropdown-menu {
-  position: absolute;
-  top: 60px;
-  right: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  min-width: 160px;
+.icon-user {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+
+.icon-chevron {
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+.icon-chevron.rotate {
+  transform: rotate(180deg);
+}
+
+/* === Focus / Accessibilité === */
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.active-link {
+  color: #FF7E33 !important;
 }
 
 .dropdown-item {
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #000;
-  font-family: 'Raleway', sans-serif;
-}
-
-.dropdown-item:hover {
-  background-color: #FFD8C2;
-  color: #000;
-}
-
-
-.icon-user, .icon-chevron {
-  font-size: 18px;
-}
-/* Dropdown Nos services */
-.dropdown-services {
-  position: relative;
-  cursor: pointer;
-}
-
-.services-title {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: bold;
   color: #F4F4F4;
-  font-size: 16px;
-  transition: color 0.3s;
+  font-size: 1rem;
+  transition: all 0.3s;
 }
 
-.services-title:hover {
+.dropdown-item:hover,
+.dropdown-item:active,
+.dropdown-item.active {
   color: #FF7E33;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
-/* Menu déroulant */
-.dropdown-services-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #000000;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  overflow: hidden;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  min-width: 180px;
-  z-index: 100;
-}
 
-/* Items du dropdown */
-.dropdown-services-menu li a {
-  display: block;
-  padding: 12px 20px;
-  color: #F4F4F4;
-  text-decoration: none;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.dropdown-services-menu li a:hover {
-  background-color: #FF7E33;
-  color: #FFFFFF;
-}

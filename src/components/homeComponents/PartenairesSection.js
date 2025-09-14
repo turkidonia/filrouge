@@ -8,15 +8,17 @@ import logo3 from '../../assets/logo3.png';
 
 const logos = [logo1, logo2, logo3];
 
-const PartenairesSection = () => (
-  <section className="partenaires">
-    <h2>Nos partenaires</h2>
-    <div className="partenaires-logos">
-      {logos.map((logo, i) => (
-        <img key={i} src={logo} alt={`Partenaire ${i + 1}`} />
-      ))}
-    </div>
-  </section>
-);
+function PartenairesSection() {
+  return (
+    <section className="partenaires">
+      <h2>Nos partenaires</h2>
+      <div className="partenaires-logos">
+        {logos.map((logo) => (
+          <img key={logo} src={logo} alt="Partenaire" />
+        ))}
+      </div>
+    </section>
+  );
+}
 
 export default PartenairesSection;

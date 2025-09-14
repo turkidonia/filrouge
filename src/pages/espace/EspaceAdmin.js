@@ -1,12 +1,13 @@
 import React from 'react';
 import './espace.css';
 
-const EspaceAdmin = ({ user }) => (
+function EspaceAdmin({ user }) {
+  return (
     <div className="espace-container">
       <h1>Espace Administrateur ⚙️</h1>
       <p>
-        Bonjour {user?.username || 'Admin'} !
-        Cet espace vous permet de gérer la plateforme START HER.
+        Bonjour {user?.username || 'Admin'} ! Cet espace vous permet de gérer la plateforme START
+        HER.
       </p>
 
       <ul className="espace-list">
@@ -16,6 +17,7 @@ const EspaceAdmin = ({ user }) => (
         <li>🛠 Assurer la modération des contenus</li>
       </ul>
     </div>
-);
+  );
+}
 
 export default EspaceAdmin;

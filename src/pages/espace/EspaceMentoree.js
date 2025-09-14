@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './espace.css';
 
-const EspaceMentoree = ({ user }) => (
+function EspaceMentoree({ user }) {
+  return (
     <div className="espace-container">
       <h1>Bienvenue {user?.username || 'Mentorée'} 🎉</h1>
       <p>
-        Vous avez accès à toutes les vidéos de formation, d’orientation,
-        d’insertion professionnelle et de reconversion.
+        Vous avez accès à toutes les vidéos de formation, d’orientation, d’insertion professionnelle
+        et de reconversion.
       </p>
 
       <div className="espace-links">
@@ -25,6 +26,7 @@ const EspaceMentoree = ({ user }) => (
         </Link>
       </div>
     </div>
-);
+  );
+}
 
 export default EspaceMentoree;

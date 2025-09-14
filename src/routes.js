@@ -1,11 +1,6 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate
-} from 'react-router-dom';
-import Error404 from './components/Error404';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Error404 from './pages/Error404';
 import Header from './components/header/navdisconnected';
 import Footer from './components/footer';
 import Home from './pages/home/Home';
@@ -24,8 +19,9 @@ import Conditions from './pages/legal/Conditions';
 import EspaceMentoree from './pages/espace/EspaceMentoree';
 import EspaceMentor from './pages/espace/EspaceMentor';
 import EspaceAdmin from './pages/espace/EspaceAdmin';
+import CookieConsent from './components/cookies/CookieConsent';
 
-const RoutesConfig = ({ currentUser, setCurrentUser }) => {
+function RoutesConfig({ currentUser, setCurrentUser }) {
   // fonction qui retourne l’espace en fonction de l’utilisateur connecté
   const getUserSpace = () => {
     if (!currentUser) return <Navigate to="/login" replace />;
@@ -62,8 +58,10 @@ const RoutesConfig = ({ currentUser, setCurrentUser }) => {
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />
+      {/* Bannière cookies en bas de toutes les pages */}
+      <CookieConsent />
     </Router>
   );
-};
+}
 
 export default RoutesConfig;

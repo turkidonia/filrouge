@@ -1,0 +1,83 @@
+/* ========================
+   START HER - Charte graphique
+   ======================== */
+
+/* --- Couleurs principales --- */
+:root {
+  --bs-primary: #FF7E33;   /* Orange vif */
+  --bs-secondary: #FFD8C2; /* Beige rosé */
+  --bs-dark: #000000;      /* Noir */
+  --bs-light: #F4F4F4;     /* Gris clair */
+}
+
+/* --- Polices --- */
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: var(--bs-light);
+  color: var(--bs-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Old Standard TT', serif;
+}
+
+/* --- Boutons --- */
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #e66f2b; /* un peu plus foncé */
+  border-color: #e66f2b;
+}
+
+.btn-secondary {
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+  color: var(--bs-dark);
+}
+
+.btn-dark {
+  background-color: var(--bs-dark);
+  border-color: var(--bs-dark);
+  color: #fff;
+}
+
+/* --- Alertes --- */
+.alert-primary {
+  background-color: var(--bs-primary);
+  color: #fff;
+  border: none;
+}
+
+.alert-secondary {
+  background-color: var(--bs-secondary);
+  color: var(--bs-dark);
+  border: none;
+}
+
+/* --- Formulaires --- */
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.form-control:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.2rem rgba(255, 126, 51, 0.25);
+}
+
+/* --- Footer ou bandeau --- */
+footer {
+  background-color: var(--bs-dark);
+  color: var(--bs-light);
+  padding: 2rem 0;
+  text-align: center;
+}

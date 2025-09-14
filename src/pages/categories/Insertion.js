@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './categorie.css';
 
-const Insertion = () => {
+function Insertion() {
   const [isLoggedIn] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -28,8 +28,8 @@ const Insertion = () => {
     <div className="page-container">
       <h1 className="page-title">Insertion professionnelle</h1>
       <p className="page-description">
-        Nos vidéos sur l’insertion professionnelle vous guident pour intégrer efficacement
-        le marché du travail après une formation ou une reconversion.
+        Nos vidéos sur l’insertion professionnelle vous guident pour intégrer efficacement le marché
+        du travail après une formation ou une reconversion.
       </p>
 
       {message && <p className="video-message">{message}</p>}
@@ -42,13 +42,11 @@ const Insertion = () => {
             role="button"
             tabIndex={0}
             onClick={() => handleVideoClick(video)}
-            onKeyDown={(e) => { if (e.key === 'Enter') handleVideoClick(video); }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleVideoClick(video);
+            }}
           >
-            <iframe
-              src={video.url}
-              title={video.title}
-              allowFullScreen
-            ></iframe>
+            <iframe src={video.url} title={video.title} allowFullScreen />
 
             {!isLoggedIn && (
               <div className="video-overlay">
@@ -61,13 +59,13 @@ const Insertion = () => {
 
       {!isLoggedIn && (
         <div className="login-button-container">
-          <button className="login-button" onClick={handleLoginClick}>
+          <button type="button" className="login-button" onClick={handleLoginClick}>
             Se connecter
           </button>
         </div>
       )}
     </div>
   );
-};
+}
 
 export default Insertion;

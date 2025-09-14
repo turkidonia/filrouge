@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './categorie.css';
 
-const Formation = () => {
+function Formation() {
   const [isLoggedIn] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -29,8 +29,8 @@ const Formation = () => {
     <div className="page-container">
       <h1 className="page-title">Formation</h1>
       <p className="page-description">
-        Découvrez nos vidéos de formation dédiées à la reconversion professionnelle des femmes.
-        Ces ressources vous accompagnent pas à pas pour acquérir de nouvelles compétences.
+        Découvrez nos vidéos de formation dédiées à la reconversion professionnelle des femmes. Ces
+        ressources vous accompagnent pas à pas pour acquérir de nouvelles compétences.
       </p>
 
       {message && <p className="video-message">{message}</p>}
@@ -43,13 +43,11 @@ const Formation = () => {
             role="button"
             tabIndex={0}
             onClick={() => handleVideoClick(video)}
-            onKeyDown={(e) => { if (e.key === 'Enter') handleVideoClick(video); }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleVideoClick(video);
+            }}
           >
-            <iframe
-              src={video.url}
-              title={video.title}
-              allowFullScreen
-            ></iframe>
+            <iframe src={video.url} title={video.title} allowFullScreen />
 
             {!isLoggedIn && (
               <div className="video-overlay">
@@ -63,13 +61,13 @@ const Formation = () => {
       {/* Bouton connexion visible seulement si non connecté */}
       {!isLoggedIn && (
         <div className="login-button-container">
-          <button className="login-button" onClick={handleLoginClick}>
+          <button type="button" className="login-button" onClick={handleLoginClick}>
             Se connecter
           </button>
         </div>
       )}
     </div>
   );
-};
+}
 
 export default Formation;

@@ -34,7 +34,8 @@ const mentors = [
   }
 ];
 
-const Mentorat = () => (
+function Mentorat() {
+  return (
     <section className="mentorat">
       <div className="mentorat-header">
         <h1>Nos Mentors</h1>
@@ -52,22 +53,22 @@ const Mentorat = () => (
             <p className="mentor-domaine">{mentor.domaine}</p>
             <div className="mentor-rating">
               {Array.from({ length: 5 }, (_, i) => (
-                <FaStar
-                  key={i}
-                  color={i < Math.round(mentor.note) ? '#FF7E33' : '#ddd'}
-                />
+                <FaStar key={i} color={i < Math.round(mentor.note) ? '#FF7E33' : '#ddd'} />
               ))}
               <span className="mentor-note">{mentor.note.toFixed(1)}</span>
             </div>
           </div>
         ))}
       </div>
-       <div className="contact-button-container">
+      <div className="contact-button-container">
         <Link to="/contact">
-          <button className="contact-button">Contactez-nous</button>
+          <button type="button" className="contact-button">
+            Contactez-nous
+          </button>
         </Link>
-    </div>
+      </div>
     </section>
-);
+  );
+}
 
 export default Mentorat;

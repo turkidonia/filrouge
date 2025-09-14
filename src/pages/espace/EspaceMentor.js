@@ -1,13 +1,13 @@
 import React from 'react';
 import './espace.css';
 
-const EspaceMentor = ({ user }) => (
+function EspaceMentor({ user }) {
+  return (
     <div className="espace-container">
       <h1>Espace Mentor 👩‍🏫</h1>
       <p>
-        Bienvenue {user?.username || 'Mentor'} !
-        Ici, vous pouvez accompagner vos mentorées en partageant vos conseils et
-        vos expériences.
+        Bienvenue {user?.username || 'Mentor'} ! Ici, vous pouvez accompagner vos mentorées en
+        partageant vos conseils et vos expériences.
       </p>
 
       <ul className="espace-list">
@@ -16,6 +16,7 @@ const EspaceMentor = ({ user }) => (
         <li>📝 Suivre la progression de vos mentorées</li>
       </ul>
     </div>
-);
+  );
+}
 
 export default EspaceMentor;

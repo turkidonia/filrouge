@@ -5,7 +5,8 @@ import ContactSection from '../../components/homeComponents/ContactSection';
 import PartenairesSection from '../../components/homeComponents/PartenairesSection';
 import './home.css';
 
-const Home = () => (
+function Home() {
+  return (
     <div>
       {/* Bloc 1 : Hero */}
       <HeroSection />
@@ -19,6 +20,7 @@ const Home = () => (
       {/* Bloc 4 : Partenaires */}
       <PartenairesSection />
     </div>
-);
+  );
+}
 
 export default Home;

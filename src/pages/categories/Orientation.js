@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './categorie.css';
 
-const Orientation = () => {
+function Orientation() {
   const [isLoggedIn] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -28,8 +28,8 @@ const Orientation = () => {
     <div className="page-container">
       <h1 className="page-title">Orientation</h1>
       <p className="page-description">
-        Trouvez votre voie grâce à ces vidéos d’orientation. Elles vous aident à identifier vos forces,
-        explorer de nouvelles opportunités et construire un projet solide.
+        Trouvez votre voie grâce à ces vidéos d’orientation. Elles vous aident à identifier vos
+        forces, explorer de nouvelles opportunités et construire un projet solide.
       </p>
 
       {message && <p className="video-message">{message}</p>}
@@ -42,13 +42,11 @@ const Orientation = () => {
             role="button"
             tabIndex={0}
             onClick={() => handleVideoClick(video)}
-            onKeyDown={(e) => { if (e.key === 'Enter') handleVideoClick(video); }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleVideoClick(video);
+            }}
           >
-            <iframe
-              src={video.url}
-              title={video.title}
-              allowFullScreen
-            ></iframe>
+            <iframe src={video.url} title={video.title} allowFullScreen />
 
             {!isLoggedIn && (
               <div className="video-overlay">
@@ -61,13 +59,13 @@ const Orientation = () => {
 
       {!isLoggedIn && (
         <div className="login-button-container">
-          <button className="login-button" onClick={handleLoginClick}>
+          <button type="button" className="login-button" onClick={handleLoginClick}>
             Se connecter
           </button>
         </div>
       )}
     </div>
   );
-};
+}
 
 export default Orientation;
