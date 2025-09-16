@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../login/login.css';
 
 const apiUrl = process.env.REACT_APP_API_URL;
+//const loginURL = 'http://localhost:8081/public/v1/auth/register';
 
 function Register() {
   const [email, setEmail] = useState('');
