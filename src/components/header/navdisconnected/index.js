@@ -5,7 +5,7 @@ import { FaUser } from 'react-icons/fa';
 import { FiChevronDown } from 'react-icons/fi';
 import logo from '../../../assets/image.png';
 
-function Navbar() {
+function Navbar({ currentUser }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
@@ -136,6 +136,13 @@ function Navbar() {
               <FiChevronDown className={`icon-chevron ${menuOpen ? 'rotate' : ''}`} />
             </button>
             <ul className={`dropdown-menu dropdown-menu-end ${menuOpen ? 'show' : ''}`}>
+              { currentUser
+              ? <li>
+                <NavLink to="/login" className="dropdown-item">
+                  Me déconnecter
+                </NavLink>
+              </li>
+              : <>
               <li>
                 <NavLink to="/login" className="dropdown-item">
                   Connexion
@@ -145,7 +152,8 @@ function Navbar() {
                 <NavLink to="/register" className="dropdown-item">
                   Inscription
                 </NavLink>
-              </li>
+              </li> 
+              </>}
             </ul>
           </div>
         </div>

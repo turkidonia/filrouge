@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './categorie.css';
 
-function Formation() {
-  const [isLoggedIn] = useState(false);
+function Formation({user}) {
   const [message, setMessage] = useState('');
 
   const videos = [
@@ -13,7 +12,7 @@ function Formation() {
   ];
 
   const handleVideoClick = (video) => {
-    if (!isLoggedIn) {
+    if (!user) {
       setMessage('Vous devez créer un compte ou vous connecter pour accéder à cette vidéo.');
       return;
     }
@@ -27,7 +26,8 @@ function Formation() {
 
   return (
     <div className="page-container">
-      <h1 className="page-title">Formation</h1>
+      
+      <h1 className="page-title">Formation{user?.username}</h1>
       <p className="page-description">
         Découvrez nos vidéos de formation dédiées à la reconversion professionnelle des femmes. Ces
         ressources vous accompagnent pas à pas pour acquérir de nouvelles compétences.
@@ -49,7 +49,7 @@ function Formation() {
           >
             <iframe src={video.url} title={video.title} allowFullScreen />
 
-            {!isLoggedIn && (
+            {!user && (
               <div className="video-overlay">
                 <p>Connexion requise pour regarder la vidéo</p>
               </div>
@@ -59,7 +59,7 @@ function Formation() {
       </div>
 
       {/* Bouton connexion visible seulement si non connecté */}
-      {!isLoggedIn && (
+      {!user && (
         <div className="login-button-container">
           <button type="button" className="login-button" onClick={handleLoginClick}>
             Se connecter

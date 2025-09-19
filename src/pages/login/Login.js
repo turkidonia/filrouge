@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './login.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const loginURL = 'http://localhost:8081/public/v1/auth/login';
 
-function Login() {
+function Login({ setCurrentUser }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    setCurrentUser(null);
+   }, [setCurrentUser]
+  );
+
+  const navigate = useNavigate(); // pour la redirection
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,9 +33,31 @@ function Login() {
 
     try {
       const response = await axios.post(loginURL, loginForm);
-      localStorage.setItem('user', response.data.token);
+
+      // Récupère le token et les infos de rôle
+      const { token, username, roles } = response.data;
+
+      // Stocke le token
+      localStorage.setItem('token', token);
+
+      // Déduire isMentored et isAdmin à partir de roles
+      const isMentored = roles.includes('ROLE_MENTOREE');
+      const isAdmin = roles.includes('ROLE_ADMIN');
+
+      // Met à jour currentUser pour RoutesConfig
+      setCurrentUser({
+        email: username,
+        isMentored,
+        isAdmin,
+        token
+      });
+
+      // Vide les champs
       setEmail('');
       setPassword('');
+
+      // Redirige vers /espace pour que RoutesConfig choisisse l'espace
+      navigate('/espace');
     } catch (err) {
       setError(err.response?.data?.message || 'Erreur lors de la connexion.');
       setPassword('');
